@@ -1,6 +1,6 @@
 # Basic-App-Structure
 
-Image Background Remover
+Node boilerplates for sequelize ORM
 
 ## Pre requisites
 
