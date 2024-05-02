@@ -15,18 +15,12 @@ app.use(cors());
 
 // Structure request response
 app.use(function (req, res, next) {
-  /**
-   * (default status 200)
-   * Success response
-   */
-  res.success = async (data) => {
-    return res.status(200).send({ success: true, error: null, body: data });
+  // Success response
+  res.success = async (data, status = 200) => {
+    return res.status(status).send({ success: true, error: null, body: data });
   };
 
-  /**
-   * (status 500)
-   * Internal request response
-   */
+  // Internal request response
   res.internalError = async (error) => {
     return res.status(error.status || 500).send({
       success: false,
